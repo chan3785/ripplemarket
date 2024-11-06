@@ -6,8 +6,6 @@ import { useRecoilValue } from 'recoil';
 import { ChartConfig } from '@/components/ui/chart';
 import { accountState } from '@/atom/account';
 import { Button, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
-
-
 import {
   BarChart,
   Bar,
@@ -32,14 +30,12 @@ const GamePage = () => {
   const [sellerTapCount, setSellerTapCount] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameStartedYet, setGameStartedYet] = useState(true);
-  const [modalIsOpen, setModalIsOpen] = useState(false); // 모달 상태 추가
   const [tradeInfo, setTradeInfo] = useState<TradeInfo | null>(null);
   const account = useRecoilValue(accountState);
-  const [gameOver, setGameOver] = useState(false); // 게임 종료 상태 추가
-
+  const [gameOver, setGameOver] = useState(false);
+  
   const searchParams = useSearchParams();
   const tradeId = searchParams.get('tradeId');
-
 
   useEffect(() => {
     if (tradeId) {
@@ -56,11 +52,10 @@ const GamePage = () => {
     }
   }, [tradeId]);
 
-  
   const [roomId, setRoomId] = useState('');
   const [role, setRole] = useState<'buyer' | 'seller'>('buyer');
-  const [countdown, setCountdown] = useState(3); // 카운트다운 상태 추가
-  const [countdownActive, setCountdownActive] = useState(false); // 카운트다운 활성화 상태 추가
+  const [countdown, setCountdown] = useState(3);
+  const [countdownActive, setCountdownActive] = useState(false);
 
   const chartConfig: ChartConfig = {
     up: {
@@ -138,7 +133,6 @@ const GamePage = () => {
     setCountdownActive(true); // 카운트다운 활성화
   };
 
-
   const handleTap = () => {
     if (!gameStarted || !socket) return;
     setTapCount((prevCount) => {
@@ -147,13 +141,10 @@ const GamePage = () => {
       return newCount;
     });
   };
-  const currentTradeId : string = tradeInfo?.tradeId!
-  console.log("currentTradeId", currentTradeId)
-  
+
   const handleJoinRoom = () => {
-    if (socket && currentTradeId) {
-      socket.emit('joinRoom', { currentTradeId, role });
-      // 카운트다운 및 게임 시작 로직
+    if (socket && tradeId) {
+      socket.emit('joinRoom', { tradeId, role });
       socket.on('gameStart', () => {
         startCountdown();
         setGameStartedYet(false);
@@ -161,10 +152,6 @@ const GamePage = () => {
         setSellerTapCount(0);
       });
     }
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
   };
 
   return (

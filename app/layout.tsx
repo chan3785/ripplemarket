@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import { Suspense } from "react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,10 +30,13 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Provider>
+        <Suspense>
+          <Provider>
           <Header />
           {children}
         </Provider>
+        </Suspense>
+        
       </body>
     </html>
   );
