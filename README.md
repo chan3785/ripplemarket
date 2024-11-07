@@ -1,6 +1,27 @@
-# ripplemarket
+# RippleMarket
 
-XRPL Hackathon Seoul 2024
+XRPL Sea Hackathon 2024
+
+### [Demo Video](https://drive.google.com/file/d/1g31eIzJlZHkbmONdH_wjPscdRO9Ma4Z-/view?resourcekey) | [Demo](http://13.125.58.215:3000/) | [Pitchdeck](https://drive.google.com/file/d/1SpbAWFqRXAxWxNxUf0pQRAjOUFkK8CuY/view?usp=sharing)
+
+## Overview
+The Ripple Market project in Danggeun Market aims to bring the convenience, security, and efficiency of Ripple (XRP) payments to the popular Korean community-based app, where people buy, sell, and trade locally. By integrating Ripple, the project expands Danggeun Market’s reach, offering a reliable platform for `global peer-to-peer (P2P) transactions` that emphasizes safe, low-cost, and accessible trading within local communities. The project combines Danggeun Market’s active user base with Web3 technology to enhance the overall trading experience, reducing entry barriers to blockchain for new users.
+
+## Key Features
+Platform for Secondhand Goods
+- Fully support secondhand goods transactions, enabling users to easily buy and sell pre-owned items in their communities.
+
+Escrow Service for Secure Transactions
+- Protect against scams by holding payments until both parties verify the transaction, adding a layer of safety, especially for transactions involving package shipments.
+
+Social Login and Fiat On-Ramp
+- Offer social login for easy access, and fiat on-ramp options so users can convert traditional currency to Ripple seamlessly, enhancing accessibility.
+
+Bridge for Multi-Network Support
+- Ensure compatibility with multiple networks through a bridge feature, allowing users to engage with different blockchains and optimize transaction options.
+
+Token Swap Functionality
+- Support token swaps between stablecoins and other tokens, giving users the flexibility to transact in the currency of their choice.
 
 ### social login
 `components/wallet.tsx`
