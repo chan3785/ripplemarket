@@ -16,7 +16,7 @@ export const Wallet: React.FC = () => {
   const [account, setAccount] = useRecoilState(accountState);
   const [balance, setBalance] = useRecoilState(balanceState);
   const clientId =
-    "BGUM9pLACidLnpI8zYVxTONoaKHV59U8-5Cw9vjdLaIn9r6RU0TLCItXpLsDjVQPAcfcWKlWVm9CDU5mBlElX0M";
+    "BIDKZ3f2QOYeATbQ-6K3z9MT836zvCzLf0mh35ZB930bQpzcl4w6KJ--okRFMr7vxL5XBxK38I6nsyVIFrri3P8";
 
   const chainConfig = {
     chainNamespace: CHAIN_NAMESPACES.XRPL,

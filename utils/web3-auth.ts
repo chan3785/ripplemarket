@@ -3,7 +3,7 @@ import { XrplPrivateKeyProvider } from "@web3auth/xrpl-provider";
 import { Web3Auth } from "@web3auth/modal";
 
 const clientId =
-  "BGUM9pLACidLnpI8zYVxTONoaKHV59U8-5Cw9vjdLaIn9r6RU0TLCItXpLsDjVQPAcfcWKlWVm9CDU5mBlElX0M";
+  "BIDKZ3f2QOYeATbQ-6K3z9MT836zvCzLf0mh35ZB930bQpzcl4w6KJ--okRFMr7vxL5XBxK38I6nsyVIFrri3P8";
 
 const chainConfig = {
   chainNamespace: CHAIN_NAMESPACES.XRPL,
